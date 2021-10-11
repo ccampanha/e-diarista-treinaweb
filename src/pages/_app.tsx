@@ -4,10 +4,12 @@ import { ThemeProvider } from '@mui/material';
 import theme from 'ui/themes/theme';
 import Head from 'next/head';
 import Header from 'ui/components/surfaces/Header/Header';
+import Footer from 'ui/components/surfaces/Footer/Footer';
+import { AppContainer } from '@styles/pages/_app.styles';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<>
+		<AppContainer>
 			<Head>
 				<title>e-diaristas</title>
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -27,8 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<ThemeProvider theme={theme}>
 				<Header />
 				<Component {...pageProps} />
+				<Footer />
 			</ThemeProvider>
-		</>
+		</AppContainer>
 	);
 }
 
